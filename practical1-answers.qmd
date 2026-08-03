@@ -87,15 +87,19 @@ vis_dat(public_response)
 ```
 
 
-
-
-
 ### Question 4
 
 Clean up the data. You may find row manipulations from the `dplyr` package useful (e.g. `dplyr::rows_update()`).
 
 ```{r}
 #| label: clean-data
+pixar_films = filter(pixar_films, film_rating != "N/A")
+pixar_films = filter(pixar_films, film != "N/A")
+
+public_response = filter(public_response, rotten_tomatoes != "N/A")
+public_response = filter(public_response, metacritic != "N/A")
+public_response = filter(public_response, cinema_score != "N/A")
+public_response = filter(public_response, critics_choice != "N/A")
 
 ```
 
@@ -105,7 +109,7 @@ Now that they are clean, merge the two datasets using one of the `dplyr::*_join(
 
 ```{r}
 #| label: merge-data
-
+full_join()
 ```
 
 

@@ -236,6 +236,42 @@ dbl (3): rotten_tomatoes, metacritic, critics_choice
 <section id="question-4" class="level3">
 <h3 class="anchored" data-anchor-id="question-4">Question 4</h3>
 <p>Clean up the data. You may find row manipulations from the <code>dplyr</code> package useful (e.g.&nbsp;<code>dplyr::rows_update()</code>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pixar_films <span class="ot">=</span> <span class="fu">filter</span>(pixar_films, film_rating <span class="sc">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>pixar_films <span class="ot">=</span> <span class="fu">filter</span>(pixar_films, film <span class="sc">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>public_response <span class="ot">=</span> <span class="fu">filter</span>(public_response, rotten_tomatoes <span class="sc">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>public_response <span class="ot">=</span> <span class="fu">filter</span>(public_response, metacritic <span class="sc">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>public_response <span class="ot">=</span> <span class="fu">filter</span>(public_response, cinema_score <span class="sc">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>public_response <span class="ot">=</span> <span class="fu">filter</span>(public_response, critics_choice <span class="sc">!=</span> <span class="st">"N/A"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>public_response</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 20 × 5
+   film                rotten_tomatoes metacritic cinema_score critics_choice
+   &lt;chr&gt;                         &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;                 &lt;dbl&gt;
+ 1 Toy Story 2                     100         88 A+                      100
+ 2 Monsters, Inc.                   96         79 A+                       92
+ 3 Finding Nemo                     99         90 A+                       97
+ 4 The Incredibles                  97         90 A+                       88
+ 5 Cars                             74         73 A                        89
+ 6 Ratatouille                      96         96 A                        91
+ 7 WALL-E                           95         95 A                        90
+ 8 Up                               98         88 A+                       95
+ 9 Toy Story 3                      98         92 A                        97
+10 Cars 2                           40         57 A-                       67
+11 Brave                            78         69 A                        81
+12 Monsters University              80         65 A                        79
+13 Inside Out                       98         94 A                        93
+14 The Good Dinosaur                76         66 A                        75
+15 Finding Dory                     94         77 A                        89
+16 Cars 3                           69         59 A                        66
+17 Coco                             97         81 A+                       89
+18 Incredibles 2                    93         80 A+                       86
+19 Toy Story 4                      97         84 A                        94
+20 Onward                           88         61 A-                       79</code></pre>
+</div>
+</div>
 </section>
 <section id="question-5" class="level3">
 <h3 class="anchored" data-anchor-id="question-5">Question 5</h3>
@@ -278,7 +314,7 @@ dbl (3): rotten_tomatoes, metacritic, critics_choice
 <h3 class="anchored" data-anchor-id="question-12">Question 12</h3>
 <p>Ensure you save a copy of the raw data, new data, and script together, and write your tidy data to file with <code>readr::write_csv()</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write_csv(merged_data, "data/pixar-films-clean.csv")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># write_csv(merged_data, "data/pixar-films-clean.csv")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 </section>
