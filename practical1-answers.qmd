@@ -39,6 +39,7 @@ library(dplyr)
 library(naniar)
 library(ggplot2)
 library(tibble)
+library(visdat)
 ```
 
 ## Reading in data
@@ -50,8 +51,8 @@ Download the `.csv` files and use `readr::read_csv()` to read each dataset into 
 ```{r}
 #| label: read-data
 
-# pixar_films <- read_csv("data/pixar-films.csv")
-# public_response <- read_csv("data/pixar-films-response.csv")
+pixar_films <- read_csv("data/pixar-films.csv")
+public_response <- read_csv("data/pixar-films-response.csv")
 ```
 
 ### Question 2
@@ -60,7 +61,8 @@ Inspect each dataset. What data is missing? Is the missingness coded uniformly? 
 
 ```{r}
 #| label: inspect-data
-
+# In Pixar-Films-Response the missingness is coded uniformly, it misses some critics choices and all of Luca's answers.
+# In Pixar-Films it misses data for run time and film rating. It is not uniform as NA is written 3 different ways
 ```
 
 
@@ -75,7 +77,13 @@ Use functions from `naniar` to summarise the missingness for each dataset. Does 
 
 ```{r}
 #| label: missingness-summary
+vis_miss(pixar_films)
 
+vis_dat(pixar_films)
+
+vis_miss(public_response)
+
+vis_dat(public_response)
 ```
 
 
